@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiketoo", "Tiketoo\Tiketoo.csproj", "{613620A4-5CAB-4DDE-A3F2-0F284E7F5D0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiketoo.Contracts", "Tiketoo.Contracts\Tiketoo.Contracts.csproj", "{A30338AB-F9CE-41FA-A11B-BEB0059A959A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{613620A4-5CAB-4DDE-A3F2-0F284E7F5D0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{613620A4-5CAB-4DDE-A3F2-0F284E7F5D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{613620A4-5CAB-4DDE-A3F2-0F284E7F5D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{613620A4-5CAB-4DDE-A3F2-0F284E7F5D0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A30338AB-F9CE-41FA-A11B-BEB0059A959A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A30338AB-F9CE-41FA-A11B-BEB0059A959A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A30338AB-F9CE-41FA-A11B-BEB0059A959A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A30338AB-F9CE-41FA-A11B-BEB0059A959A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
