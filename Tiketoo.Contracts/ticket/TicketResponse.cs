@@ -2,6 +2,6 @@ namespace Tiketoo.Contracts.ticket;
 
 public record CreateTicketResponse(
     string Name,
-    string status,
+    int status,
     DateTime IssuedAt
 );
