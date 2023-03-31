@@ -1,0 +1,7 @@
+POST http://localhost:5109/ticket
+Content-Type: application/json
+
+{
+    "name" : "first ticket",
+    "description" : "monitoring problem"
+}

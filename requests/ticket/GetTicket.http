@@ -1,0 +1,2 @@
+GET http://localhost:5109/ticket/00000000-0000-0000-0000-000000000000
+Content-Type: application/json
