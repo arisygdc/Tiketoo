@@ -8,6 +8,7 @@ public class TicketService : ITicketService
     public TicketService(TicketRepository ticketRepository) { 
         _ticketRepository = ticketRepository;
     }
+
     public Models.Ticket CreateTicket(CreateTicketRequest request) {
         var ticket = new Models.Ticket(
             Guid.NewGuid(),
@@ -29,5 +30,48 @@ public class TicketService : ITicketService
         }
 
         return ticket;
+    }
+
+    public Models.Ticket GetTicket(Guid id) {
+        var ticket = _ticketRepository.Tickets.FirstOrDefault(t => t.Id == id);
+        if (ticket == null) {
+            throw new Exception("Ticket not found");
+        }
+
+        return new Models.Ticket(
+            ticket.Id,
+            ticket.Name,
+            ticket.Description,
+            ticket.IssuedAt,
+            ticket.Status);
+    }
+
+    public int UpsertTicket(Guid id, CreateTicketRequest request) {
+        var ticket = _ticketRepository.Tickets.FirstOrDefault(t => t.Id == id);
+        if (ticket == null) {
+            throw new Exception("Ticket not found");
+        }
+        
+        if (request.Name != null) {
+            ticket.Name = request.Name;
+        }
+
+        if (request.Description != null) {
+            ticket.Description = request.Description;
+        }
+
+        return _ticketRepository.SaveChanges();
+    }
+
+    public void DeleteTicket(Guid id) {
+        var ticket = _ticketRepository.Tickets.FirstOrDefault(t => t.Id == id);
+        if (ticket == null) {
+            throw new Exception("Ticket not found");
+        }
+
+        _ticketRepository.Tickets.Remove(ticket);
+        if (_ticketRepository.SaveChanges() == 0) {
+            throw new Exception("Error deleting ticket");
+        }
     }
 }

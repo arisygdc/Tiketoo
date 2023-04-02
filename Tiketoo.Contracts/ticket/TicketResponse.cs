@@ -1,7 +1,13 @@
 namespace Tiketoo.Contracts.ticket;
 
-public record CreateTicketResponse(
+public record TicketResponse(
     string Name,
-    int status,
-    DateTime IssuedAt
+    string Description,
+    DateTime IssuedAt,
+    int Status
+);
+
+public record TicketUpdatedResponse(
+    string Name,
+    string Description
 );

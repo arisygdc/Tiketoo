@@ -25,11 +25,11 @@ public class TicketController : ControllerBase
             return BadRequest(e.Message);
         }
         
-        var response = new CreateTicketResponse(
+        var response = new TicketResponse(
             ticket.Name,
-            ticket.Status,
-            ticket.IssuedAt);
-
+            ticket.Description,
+            ticket.IssuedAt,
+            ticket.Status);
 
         return CreatedAtAction(
             actionName: nameof(GetTicket),
@@ -40,18 +40,46 @@ public class TicketController : ControllerBase
     [HttpGet("{id:guid}")]
     public IActionResult GetTicket(Guid id)
     {
-        return Ok(id);
+        Models.Ticket ticket;
+        try {
+            ticket = _ticketService.GetTicket(id);
+        } catch (Exception e) {
+            return BadRequest(e.Message);
+        }
+
+        var response = new TicketResponse(
+            ticket.Name,
+            ticket.Description,
+            ticket.IssuedAt,
+            ticket.Status);
+
+        return Ok(response);
     }
 
     [HttpPut("{id:guid}")]
     public IActionResult UpsertTicket(Guid id, CreateTicketRequest request)
     {
-        return Ok(request);
+        try {
+            _ticketService.UpsertTicket(id, request);
+        } catch(Exception e) {
+            return BadRequest(e.Message);
+        }
+
+        var response = new TicketUpdatedResponse(
+            request.Name,
+            request.Description);
+
+        return Ok(response);
     }
 
     [HttpDelete("{id:guid}")]
     public IActionResult DeleteTicket(Guid id)
     {
+        try {
+            _ticketService.DeleteTicket(id);
+        } catch (Exception e) {
+            return BadRequest(e.Message);
+        }
         return Ok(id);
     }
 }
