@@ -10,7 +10,7 @@ using Tiketoo.Repository.SqlServer;
 
 namespace Tiketoo.Migrations
 {
-    [DbContext(typeof(TicketRepository))]
+    [DbContext(typeof(TiketooRepository))]
     partial class TicketRepositoryModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // inject Ticket service
 builder.Services.AddScoped<ITicketService, TicketService>();
-builder.Services.AddDbContext<TicketRepository>(options => {
+builder.Services.AddDbContext<TiketooRepository>(options => {
     options.UseSqlServer(builder.Configuration["ConnectionString:SqlServer"]);
 });
 

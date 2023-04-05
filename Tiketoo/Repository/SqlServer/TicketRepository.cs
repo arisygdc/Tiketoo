@@ -2,9 +2,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Tiketoo.Repository.SqlServer;
 
-public class TicketRepository : DbContext
+public class TiketooRepository : DbContext
 {
-    public TicketRepository(DbContextOptions<TicketRepository> options) : base(options) { }
+    public TiketooRepository(DbContextOptions<TiketooRepository> options) : base(options) { }
 
     public DbSet<Entities.Ticket> Tickets { get; set; }
+    public DbSet<Entities.User> Users { get; set; }
 }
+

@@ -11,7 +11,7 @@ using Tiketoo.Repository.SqlServer;
 
 namespace Tiketoo.Migrations
 {
-    [DbContext(typeof(TicketRepository))]
+    [DbContext(typeof(TiketooRepository))]
     [Migration("20230402072458_Initial")]
     partial class Initial
     {
