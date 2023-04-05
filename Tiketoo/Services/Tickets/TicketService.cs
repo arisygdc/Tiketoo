@@ -4,8 +4,8 @@ namespace Tiketoo.Services.Tickets;
 
 public class TicketService : ITicketService
 {
-    private readonly TicketRepository _ticketRepository;
-    public TicketService(TicketRepository ticketRepository) { 
+    private readonly TiketooRepository _ticketRepository;
+    public TicketService(TiketooRepository ticketRepository) { 
         _ticketRepository = ticketRepository;
     }
 
